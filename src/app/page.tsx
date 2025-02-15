@@ -1,5 +1,6 @@
 import { Center } from '@mantine/core';
+import { Today } from '@/lib/Homepage/Today';
 
 export default function HomePage() {
-  return <Center h={200}>Saltimbanky - ci divertiamo sul serio!</Center>;
+  return <Today />;
 }
