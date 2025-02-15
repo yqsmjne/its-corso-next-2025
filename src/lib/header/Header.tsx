@@ -5,14 +5,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Burger, Container, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import logo from '../../assets/saltimbanky.svg';
+import logo from '../../assets/logo_Multisala_Rivoli.png';
 import classes from './header.module.css';
 
 const links = [
-  { link: '/chi-siamo', label: 'Chi siamo' },
-  { link: '/cast', label: 'Cast' },
-  { link: '/spettacoli', label: 'Spettacoli' },
-  { link: '/backstage', label: 'Backstage' },
+  { link: '/', label: 'Homepage' },
+  { link: '/tariffe-promozioni', label: 'Tariffe e promozioni' },
+  { link: '/acquista', label: 'Acquista' },
+  { link: '/iniziative', label: 'Iniziative' },
+  { link: '/app', label: 'App' },
   { link: '/contatti', label: 'Contatti' },
 ];
 
@@ -38,7 +39,7 @@ export function Header() {
   return (
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
-        <Image src={logo} alt="Saltimbanky" height={60} />
+        <Image src={logo} alt="Cinema Multisala Rivoli" height={60} />
         <Group gap={5} visibleFrom="xs">
           {items}
         </Group>

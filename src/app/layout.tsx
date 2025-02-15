@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Saltimbanky',
-  description: 'Ci divertiamo sul serio!',
+  title: 'Cinema Multisala Rivoli',
+  description: 'Cinema Verona!',
 };
 
 const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
