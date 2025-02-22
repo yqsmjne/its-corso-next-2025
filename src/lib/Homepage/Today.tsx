@@ -1,7 +1,7 @@
 'use client';
 
 import { Carousel, CarouselSlide } from '@mantine/carousel';
-import { Button, Flex, Image, Paper, Stack, Text, Title, useMantineTheme } from '@mantine/core';
+import { Box, Button, Flex, Image, Stack, Text, Title, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import classes from './Today.module.css';
 
@@ -11,14 +11,37 @@ import { Movie } from '@/api-types/movie';
 
 function Card({ movie }: { movie: Movie }) {
   return (
-    <Paper
-      shadow="md"
+    <Box
       p="xl"
-      radius="md"
-      style={{ backgroundImage: `url(${movie.image_url})`, filter: 'blur(10px)' }}
+      style={{
+        height: '87vh',
+        position: 'relative',
+      }}
       className={classes.card}
     >
-      <Flex align="center" justify="space-around" w="100%" h="100%" gap="xl">
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          // backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the opacity as needed
+          backgroundImage: `url(${movie.image_url})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(20px)',
+          zIndex: 1,
+        }}
+      />
+      <Flex
+        align="center"
+        justify="space-around"
+        w="100%"
+        h="100%"
+        gap="xl"
+        style={{ position: 'relative', zIndex: 2 }}
+      >
         <Stack gap="xs" align="start" h="100%">
           <Text className={classes.category} size="xs">
             {movie.genre}
@@ -36,7 +59,7 @@ function Card({ movie }: { movie: Movie }) {
         </Stack>
         <Image src={movie.image_url} h="100%" alt={movie.title} />
       </Flex>
-    </Paper>
+    </Box>
   );
 }
 

@@ -7,6 +7,7 @@ import '@mantine/core/styles.css';
 
 import { PropsWithChildren } from 'react';
 import { Header } from '../lib/header/Header';
+import styles from './layout.module.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,7 +35,7 @@ const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
       </head>
-      <body>
+      <body className={styles.body}>
         <MantineProvider theme={theme}>
           <Header />
           {children}
