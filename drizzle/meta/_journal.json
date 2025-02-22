@@ -8,6 +8,13 @@
       "when": 1739637296513,
       "tag": "0000_red_zaladane",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1740219758953,
+      "tag": "0001_familiar_owl",
+      "breakpoints": true
     }
   ]
 }

@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/libsql';
-import { moviesTable } from '../db/schema';
+import { moviesTable, schedulesTable } from '../db/schema';
 import { eq, and, gte, lte } from 'drizzle-orm';
 
 const db = drizzle(process.env.DB_FILE_NAME!);
@@ -31,11 +31,12 @@ export async function storeMovie(request: any) {
 export async function findMovieFromTo(from: string, to: string) {
     const dateFrom = from;
     const dateTo = to;
-    const movie = await db.select().from(scheduleTable).where(and(
-            gte(scheduleTable.date, parseInt(dateFrom)),
-            lte(scheduleTable.date, parseInt(dateTo))
-        )
-    )
+    const movies = await db.select().from(schedulesTable).where(
+      and(
+        gte(schedulesTable.date, dateFrom),
+        lte(schedulesTable.date, dateTo)
+      )
+    );
     
-    return movie;
+    return movies;
 }
