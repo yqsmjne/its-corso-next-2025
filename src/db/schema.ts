@@ -41,7 +41,6 @@ export const schedulesTable = sqliteTable("schedules", {
     id_room: int("id_room").notNull().references(() => roomsTable.id, { onDelete: "cascade" }),
     date: text("date").notNull(),
     time: text("time").notNull(),
-    tags_ids: text("tags_ids").notNull(),
 });
 
 export const schedulesTags = sqliteTable("schedules_tags", {
