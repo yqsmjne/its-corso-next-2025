@@ -1,20 +1,18 @@
 import { int, primaryKey, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
-export const moviesTable = sqliteTable("movies", {
-    id: int("id").primaryKey({ autoIncrement: true }).notNull(),
-    title: text("title").notNull(),
-    genre: text("genre").notNull(),
-    restriction: text("restriction").notNull(),
-    language: text("language").notNull(),
-    director: text("director").notNull(),
-    cast: text("cast").notNull(),
-    description: text("description").notNull(),
-    year: int("year").notNull(),
-    image_url: text("image_url").notNull(),
-    duration: int("duration").notNull(),
-    trailer_url: text("trailer_url").notNull(),
-    rating: int("rating").notNull(),
-    tags_ids: text("tags_ids").notNull(),
+export const moviesTable = sqliteTable("movies_table", {
+  id: int().primaryKey({ autoIncrement: true }),
+  title: text().notNull(),
+  genre: text().notNull(),
+  restriction: text(),
+  language: text().notNull(),
+  director: text().notNull(),
+  description: text().notNull(),
+  year: int().notNull(),
+  image_url: text().notNull(),
+  duration: int().notNull(),
+  trailer_url: text(),
+  rating: int(),
 });
 
 export const tagsTable = sqliteTable("tags", {
@@ -54,4 +52,3 @@ export const schedulesTags = sqliteTable("schedules_tags", {
         pk: primaryKey({columns: [table.schedule_id, table.tag_id]}),
     })
 );
-
