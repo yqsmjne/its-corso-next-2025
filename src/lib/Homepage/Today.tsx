@@ -39,6 +39,7 @@ function Card({ movie }: { movie: Movie }) {
         justify="space-around"
         w="100%"
         h="100%"
+        p="xl"
         gap="xl"
         style={{ position: 'relative', zIndex: 2 }}
       >
@@ -53,7 +54,7 @@ function Card({ movie }: { movie: Movie }) {
           <Button variant="white" color="dark">
             Acquista il biglietto
           </Button>
-          <Button variant="white" color="dark">
+          <Button className={classes.btnScheda} color="dark">
             Vai alla scheda
           </Button>
         </Stack>
@@ -119,6 +120,7 @@ export const Today = () => {
       slidesToScroll={1}
       withIndicators
       withControls
+      classNames={classes}
     >
       {slides}
     </Carousel>
