@@ -1,4 +1,4 @@
-import { getAllMovie, storeMovie, findMovieById } from '../../../services/movie';
+import { getAllMovie, storeMovie } from '../../../services/movie';
 
 export async function GET(request: Request) {
   const movie = await getAllMovie();
