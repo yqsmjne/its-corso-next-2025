@@ -11,6 +11,13 @@ export async function getAllMovie() {
     return movie;
 }
 
+export async function getMovieToday() {
+  const today = new Date().toISOString().split('T')[0];
+  const movies = await db.select().from(schedulesTable).where(eq(schedulesTable.date, today));
+  console.log('Movies for today: ', movies);
+  return movies;
+}
+
 export async function findMovieById(id: number) {
     const movieId = id;
     const movie = await db.select().from(moviesTable).where(eq(moviesTable.id, movieId));
