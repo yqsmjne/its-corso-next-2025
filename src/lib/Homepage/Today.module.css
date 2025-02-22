@@ -1,27 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Inconsolata:wght@200..900&display=swap');
 .card {
-    height: 440px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    background-size: cover;
-    background-position: center;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  font-family: 'Bebas Neue', serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+  letter-spacing: 2px;
+  color: var(--mantine-color-white);
+  line-height: 1.2;
+  font-size: 7vw;
+  margin-top: var(--mantine-spacing-xs);
+}
+
+.category {
+  color: var(--mantine-color-white);
+  opacity: 0.7;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.controls {
+  --mantine-scale: 40px;
+  .control {
+    background: #740000;
+    border: none;
+    /* width: 50px;
+    height: 50px; */
   }
-  
-  .title {
-    font-family:
-      Greycliff CF,
-      sans-serif;
-    font-weight: 900;
-    color: var(--mantine-color-white);
-    line-height: 1.2;
-    font-size: 32px;
-    margin-top: var(--mantine-spacing-xs);
-  }
-  
-  .category {
-    color: var(--mantine-color-white);
-    opacity: 0.7;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
+}
+.btnScheda {
+  background-color: #740000;
+}
