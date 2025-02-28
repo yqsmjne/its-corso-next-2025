@@ -6,6 +6,7 @@ import { theme } from '../../theme';
 import '@mantine/core/styles.css';
 
 import { PropsWithChildren } from 'react';
+import { FooterLinks } from '../lib/footer/Footer';
 import { Header } from '../lib/header/Header';
 import styles from './layout.module.css';
 
@@ -39,6 +40,7 @@ const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
         <MantineProvider theme={theme}>
           <Header />
           {children}
+          <FooterLinks />
         </MantineProvider>
       </body>
     </html>
