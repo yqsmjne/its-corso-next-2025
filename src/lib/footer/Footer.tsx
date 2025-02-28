@@ -1,7 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
 import { ActionIcon, Container, Group, Text } from '@mantine/core';
+import logo from '../../assets/logo_Multisala_Rivoli.png';
 import classes from './Footer.module.css';
 
 const data = [
@@ -60,8 +62,15 @@ export function FooterLinks() {
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
+          <Image src={logo} alt="Cinema Multisala Rivoli" height={60} />
           <Text size="xs" c="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+            Multisala cinema Rivoli
+            <br />
+            Piazza Bra, Verona, Italy
+            <br />
+            Tel: 123456
+            <br />
+            Email: cinemarivoli@multisala.it
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
