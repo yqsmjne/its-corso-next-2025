@@ -11,14 +11,7 @@ import { Movie } from '@/api-types/movie';
 
 function Card({ movie }: { movie: Movie }) {
   return (
-    <Box
-      p="xl"
-      style={{
-        height: '87vh',
-        position: 'relative',
-      }}
-      className={classes.card}
-    >
+    <Box p="xl" className={classes.card}>
       <div
         style={{
           position: 'absolute',
